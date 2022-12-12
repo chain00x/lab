@@ -10,7 +10,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("连接失败: " . $conn->connect_error);
 }
-echo '<form action="/json.php" method="POST">
+echo '<form action="/sqlinjection.php" method="POST">
       <input type="text" name="id" value="1" />
       <input type="submit" value="Submit request" />
     </form>';
@@ -21,7 +21,13 @@ if($json_data){
     echo $id;
 }
 else{
-    $id=$_REQUEST['id'];
+    if($_REQUEST['id']){
+        $id=$_REQUEST['id'];
+    }
+    else{
+        $id=$_COOKIE['id'];
+    }
+    
 }
 
 $sql = "SELECT id, username FROM user where id='".$id."'";
