@@ -4,7 +4,8 @@ payload:
 
 SQL注入支持json，post，get传参where注入
 
-json穿参数
+json curl：
+
 curl http://127.0.0.1 -X POST -H "application/json" -d '{"id":"1"}'
 
 xss
