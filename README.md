@@ -6,7 +6,7 @@ SQL注入支持json，post，get传参where注入
 
 json curl：
 
-curl http://127.0.0.1 -X POST -H "application/json" -d '{"id":"1"}' --proxy http://127.0.0.1
+curl http://127.0.0.1/sql.php -X POST -H "application/json" -d '{"id":"1"}' --proxy http://127.0.0.1:8080
 
 xss
 
